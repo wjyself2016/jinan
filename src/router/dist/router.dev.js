@@ -13,6 +13,8 @@ var _Index = _interopRequireDefault(require("@/views/index/Index"));
 
 var _Login = _interopRequireDefault(require("@/views/login/Login"));
 
+var _Back = _interopRequireDefault(require("@/views/back/Back"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 _vue["default"].use(_vueRouter["default"]); // 主页面
@@ -27,6 +29,9 @@ var routes = [{
 }, {
   path: '/login',
   component: _Login["default"]
+}, {
+  path: '/back',
+  component: _Back["default"]
 }];
 var router = new _vueRouter["default"]({
   routes: routes

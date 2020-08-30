@@ -45,9 +45,15 @@ export default {
     },
     methods: {
         accountLogin () {
-            this.$router.push({
-                path: '/index'
-            });
+            if (this.loginForm.username && this.loginForm.password) {
+                this.$http.post('/login', this.loginForm).then((resp) => {
+                    if (!resp.body.errno) {
+                        this.$router.push({
+                            path: '/index'
+                        });
+                    }
+                });
+            }
         }
     },
     components: {

@@ -10,7 +10,19 @@ export default {
 
 		}
 	},
+	beforeMount () {
+		this.checkLogin();
+	},
 	methods: {
+		checkLogin () {
+			this.$http.get('/who').then((resp) => {
+				let data = resp.body.data;
+				// console.log(data);
+				if (data) {
+					this.$store.commit('global/setUser', data[0]);
+				}
+			});
+		}
 	}
 }
 </script>

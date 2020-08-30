@@ -1,10 +1,10 @@
 const state = {
-    userName: ''
+    user: null
 };
 
 const mutations = {
-    'global/setUserName' (state, name) {
-        state.userName = name;
+    'global/setUser' (state, obj) {
+        state.user = obj;
     }
 };
 
